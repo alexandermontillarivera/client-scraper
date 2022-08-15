@@ -1,6 +1,5 @@
 <script lang="ts">
   import Menu from '../components/nav/Menu.svelte'
-  import '../global/prettify.js'
   import { getLang } from '../util/lang.js'
   const lang: any = getLang('documentation')
 </script>
