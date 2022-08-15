@@ -109,7 +109,7 @@
   }
   @media (prefers-color-scheme: dark) {
     .code{
-      background-color: var(--bg-code-dark);
+      background-color: var(--bg-cdark);
     }
 
   }
