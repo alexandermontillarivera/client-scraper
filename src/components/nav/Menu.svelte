@@ -39,7 +39,7 @@
     }
     return filter
   })
-  const title: string = 'Scrapper'
+  const title: string = 'Scraper'
   const { home,graph, meta, doc } = menuSelect[0].places
 </script>
 
