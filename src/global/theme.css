@@ -1,0 +1,20 @@
+@media (prefers-color-scheme: light) {
+  body, p, li, a, select, option {
+    color: var(--color-dark)
+  }
+  body{
+    background-color: var(--bg-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body, p, li, a{
+    color: var(--color-light)
+  }
+  body{
+    background-color: var(--bg-dark);
+  }
+  select, option{
+    color: var(--color-light);
+  }
+}

@@ -1,0 +1,58 @@
+@import url('./root.css');
+@import url('./theme.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
+
+*, *::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Quicksand", Arial, Helvetica, sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+.prettyprint.pln{
+  color: red
+}
+
+main{
+  margin: 20px
+}
+
+h1, h2:not(.main-title){
+  text-align: center;
+  font-size: 4vw
+}
+
+br{
+  padding: 10px 0px;
+}
+.content{
+  margin: 3rem;
+}
+
+.btn {
+  border-radius: 26px;
+  font-weight: 500;
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0 40px;
+  display: inline-block;
+  letter-spacing: .5px;
+}
+
+
+@media (max-width: 450px) {
+  h1, h2:not(.main-title){
+    font-size: 8vw;
+  }
+}
