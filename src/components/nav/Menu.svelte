@@ -1,6 +1,6 @@
 <script lang="ts">
   import ChangeLanguage from '../btn/ChangeLanguage.svelte'
-  import { link, Link } from 'svelte-navigator'
+  import {link} from 'svelte-routing'
   import { selectLang } from '../../util/lang.js'
   interface Lang {
     lang: string, places: {
@@ -50,7 +50,7 @@
     </div>
     <ul>
       <li><a href="/" use:link>{ home }</a></li>
-      <li><Link to="/opengraph">{ graph }</Link></li>
+      <li><a href="/opengraph" use:link>{ graph }</a></li>
       <li><a href="/meta" use:link>{ meta }</a></li>
       <li><a href="/documentation" use:link>{ doc }</a></li>
       <li><ChangeLanguage id="desktop-lang"/></li>

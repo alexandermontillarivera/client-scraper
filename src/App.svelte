@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Route, Router } from 'svelte-navigator'
+  import { Route, Router } from 'svelte-routing'
   import Home from './pages/Home.svelte'
   import Meta from './pages/Meta.svelte'
   import OpenGraph from './pages/OpenGraph.svelte'
@@ -7,16 +7,16 @@
 </script>
 
 <Router>
-  <Route path="/" primary={false}>
+  <Route path="/">
     <Home />
   </Route>
-  <Route path="/meta" primary={false}>
+  <Route path="/meta" >
     <Meta />
   </Route>
-  <Route path="/opengraph" primary={false}>
+  <Route path="/opengraph" >
     <OpenGraph />
   </Route>
-  <Route path="/documentation" primary={false}>
+  <Route path="/documentation" >
     <Documentation />
   </Route>
 </Router>
