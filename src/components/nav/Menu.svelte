@@ -1,6 +1,6 @@
 <script lang="ts">
   import ChangeLanguage from '../btn/ChangeLanguage.svelte'
-  import {link} from 'svelte-routing'
+  import {link} from 'svelte-navigator'
   import { selectLang } from '../../util/lang.js'
   interface Lang {
     lang: string, places: {

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Route, Router } from 'svelte-routing'
+  import { Route, Router } from 'svelte-navigator'
   import Home from './pages/Home.svelte'
   import Meta from './pages/Meta.svelte'
   import OpenGraph from './pages/OpenGraph.svelte'
