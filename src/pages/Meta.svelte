@@ -24,7 +24,7 @@
 				</blockquote>
         <Form 
             contentTitle={page.table.content} 
-            label={page.places.label} 
+            label={page.places.input.place} 
             place={page.places.input.place} 
             propertyTitle={page.table.property}
             submit={page.places.send}

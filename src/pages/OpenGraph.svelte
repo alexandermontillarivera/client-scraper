@@ -24,7 +24,7 @@
 				</blockquote>
 				<OpenGraphForm
             contentTitle={page.places.table.content} 
-            label={page.places.label} 
+            label={page.places.input.place} 
             place={page.places.input.place} 
             propertyTitle={page.places.table.property}
             submit={page.places.send}
