@@ -23,7 +23,9 @@
     "@fontsource/quicksand": "^4.5.9",
     "axios": "^0.27.2",
     "code-prettify": "^0.1.0",
+    "highlight.js": "^11.6.0",
     "normalize.css": "^8.0.1",
+    "svelte-highlight": "^6.2.1",
     "svelte-navigator": "^3.1.6"
   }
 }
