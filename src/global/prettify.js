@@ -1,26 +1,4 @@
 ! function() {
-  /*
-   Copyright (C) 2013 Google Inc.
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-        http://www.apache.org/licenses/LICENSE-2.0
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
-   Copyright (C) 2006 Google Inc.
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-        http://www.apache.org/licenses/LICENSE-2.0
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
-  */
   (function() {
       function aa(g) {
           function r() {
@@ -89,8 +67,7 @@
       for (B = H.length; l < B; ++l)(function() {
           var g = z.createElement("script");
           g.onload = g.onerror = g.onreadystatechange = function() {
-              !g || g.readyState && !/loaded|complete/.test(g.readyState) || (g.onerror = g.onload = g.onreadystatechange = null, --S, S || k.setTimeout(T, 0), g.parentNode && g.parentNode.removeChild(g),
-                  g = null)
+              !g || g.readyState && !/loaded|complete/.test(g.readyState) || (g.onerror = g.onload = g.onreadystatechange = null, --S, S || k.setTimeout(T, 0), g.parentNode && g.parentNode.removeChild(g), g = null)
           };
           g.type = "text/javascript";
           g.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/lang-" + encodeURIComponent(H[l]) + ".js";
@@ -131,7 +108,8 @@
                       return "\\" === e || "-" === e || "]" === e || "^" === e ? "\\" + e : e
                   }
                   function c(e) {
-                      var c = e.substring(1, e.length - 1).match(RegExp("\\\\u[0-9A-Fa-f]{4}|\\\\x[0-9A-Fa-f]{2}|\\\\[0-3][0-7]{0,2}|\\\\[0-7]{1,2}|\\\\[\\s\\S]|-|[^-\\\\]", "g"));
+                      var c = e.substring(1, e.length - 1)
+                          .match(RegExp("\\\\u[0-9A-Fa-f]{4}|\\\\x[0-9A-Fa-f]{2}|\\\\[0-3][0-7]{0,2}|\\\\[0-7]{1,2}|\\\\[\\s\\S]|-|[^-\\\\]", "g"));
                       e = [];
                       var a = "^" === c[0],
                           b = ["["];
@@ -144,8 +122,7 @@
                                   p;
                               a + 2 < h && "-" === c[a + 1] ? (p = d(c[a + 2]), a += 2) : p = m;
                               e.push([m, p]);
-                              65 > p || 122 < m || (65 > p || 90 < m || e.push([Math.max(65, m) | 32, Math.min(p, 90) | 32]), 97 > p || 122 < m ||
-                                  e.push([Math.max(97, m) & -33, Math.min(p, 122) & -33]))
+                              65 > p || 122 < m || (65 > p || 90 < m || e.push([Math.max(65, m) | 32, Math.min(p, 90) | 32]), 97 > p || 122 < m || e.push([Math.max(97, m) & -33, Math.min(p, 122) & -33]))
                           }
                       }
                       e.sort(function(e, a) {
@@ -159,8 +136,7 @@
                       return b.join("")
                   }
                   function g(e) {
-                      for (var a = e.source.match(RegExp("(?:\\[(?:[^\\x5C\\x5D]|\\\\[\\s\\S])*\\]|\\\\u[A-Fa-f0-9]{4}|\\\\x[A-Fa-f0-9]{2}|\\\\[0-9]+|\\\\[^ux0-9]|\\(\\?[:!=]|[\\(\\)\\^]|[^\\x5B\\x5C\\(\\)\\^]+)",
-                              "g")), b = a.length, d = [], h = 0, m = 0; h < b; ++h) {
+                      for (var a = e.source.match(RegExp("(?:\\[(?:[^\\x5C\\x5D]|\\\\[\\s\\S])*\\]|\\\\u[A-Fa-f0-9]{4}|\\\\x[A-Fa-f0-9]{2}|\\\\[0-9]+|\\\\[^ux0-9]|\\(\\?[:!=]|[\\(\\)\\^]|[^\\x5B\\x5C\\(\\)\\^]+)", "g")), b = a.length, d = [], h = 0, m = 0; h < b; ++h) {
                           var p = a[h];
                           "(" === p ? ++m : "\\" === p.charAt(0) && (p = +p.substring(1)) && (p <= m ? d[p] = -1 : a[h] = f(p))
                       }
@@ -202,8 +178,7 @@
                       var b = a.nodeType;
                       if (1 == b) {
                           if (!c.test(a.className)) {
-                              for (b =
-                                  a.firstChild; b; b = b.nextSibling) f(b);
+                              for (b = a.firstChild; b; b = b.nextSibling) f(b);
                               b = a.nodeName.toLowerCase();
                               if ("br" === b || "li" === b) g[q] = "\n", A[q << 1] = r++, A[q++ << 1 | 1] = a
                           }
@@ -216,7 +191,8 @@
                       q = 0;
                   f(a);
                   return {
-                      a: g.join("").replace(/\n$/, ""),
+                      a: g.join("")
+                          .replace(/\n$/, ""),
                       c: A
                   }
               }
@@ -233,8 +209,7 @@
                   }, c(a), g.push.apply(g, a.g))
               }
               function z(a) {
-                  for (var d = void 0, f = a.firstChild; f; f =
-                      f.nextSibling) var c = f.nodeType,
+                  for (var d = void 0, f = a.firstChild; f; f = f.nextSibling) var c = f.nodeType,
                       d = 1 === c ? d ? a : f : 3 === c ? S.test(f.nodeValue) ? a : d : d;
                   return d === a ? void 0 : d
               }
@@ -295,21 +270,17 @@
                   var d = [],
                       f = [];
                   a.tripleQuotedStrings ? d.push(["str", /^(?:\'\'\'(?:[^\'\\]|\\[\s\S]|\'{1,2}(?=[^\']))*(?:\'\'\'|$)|\"\"\"(?:[^\"\\]|\\[\s\S]|\"{1,2}(?=[^\"]))*(?:\"\"\"|$)|\'(?:[^\\\']|\\[\s\S])*(?:\'|$)|\"(?:[^\\\"]|\\[\s\S])*(?:\"|$))/, null, "'\""]) : a.multiLineStrings ? d.push(["str", /^(?:\'(?:[^\\\']|\\[\s\S])*(?:\'|$)|\"(?:[^\\\"]|\\[\s\S])*(?:\"|$)|\`(?:[^\\\`]|\\[\s\S])*(?:\`|$))/, null, "'\"`"]) : d.push(["str", /^(?:\'(?:[^\\\'\r\n]|\\.)*(?:\'|$)|\"(?:[^\\\"\r\n]|\\.)*(?:\"|$))/, null, "\"'"]);
-                  a.verbatimStrings &&
-                      f.push(["str", /^@\"(?:[^\"]|\"\")*(?:\"|$)/, null]);
+                  a.verbatimStrings && f.push(["str", /^@\"(?:[^\"]|\"\")*(?:\"|$)/, null]);
                   var c = a.hashComments;
                   c && (a.cStyleComments ? (1 < c ? d.push(["com", /^#(?:##(?:[^#]|#(?!##))*(?:###|$)|.*)/, null, "#"]) : d.push(["com", /^#(?:(?:define|e(?:l|nd)if|else|error|ifn?def|include|line|pragma|undef|warning)\b|[^\r\n]*)/, null, "#"]), f.push(["str", /^<(?:(?:(?:\.\.\/)*|\/?)(?:[\w-]+(?:\/[\w-]+)+)?[\w-]+\.h(?:h|pp|\+\+)?|[a-z]\w*)>/, null])) : d.push(["com", /^#[^\r\n]*/, null, "#"]));
-                  a.cStyleComments && (f.push(["com", /^\/\/[^\r\n]*/, null]), f.push(["com", /^\/\*[\s\S]*?(?:\*\/|$)/,
-                      null
-                  ]));
+                  a.cStyleComments && (f.push(["com", /^\/\/[^\r\n]*/, null]), f.push(["com", /^\/\*[\s\S]*?(?:\*\/|$)/, null]));
                   if (c = a.regexLiterals) {
                       var g = (c = 1 < c ? "" : "\n\r") ? "." : "[\\S\\s]";
                       f.push(["lang-regex", RegExp("^(?:^^\\.?|[+-]|[!=]=?=?|\\#|%=?|&&?=?|\\(|\\*=?|[+\\-]=|->|\\/=?|::?|<<?=?|>>?>?=?|,|;|\\?|@|\\[|~|{|\\^\\^?=?|\\|\\|?=?|break|case|continue|delete|do|else|finally|instanceof|return|throw|try|typeof)\\s*(" + ("/(?=[^/*" + c + "])(?:[^/\\x5B\\x5C" + c + "]|\\x5C" + g + "|\\x5B(?:[^\\x5C\\x5D" + c + "]|\\x5C" + g + ")*(?:\\x5D|$))+/") + ")")])
                   }(c = a.types) && f.push(["typ", c]);
-                  c = ("" + a.keywords).replace(/^ | $/g, "");
-                  c.length && f.push(["kwd",
-                      new RegExp("^(?:" + c.replace(/[\s,]+/g, "|") + ")\\b"), null
-                  ]);
+                  c = ("" + a.keywords)
+                      .replace(/^ | $/g, "");
+                  c.length && f.push(["kwd", new RegExp("^(?:" + c.replace(/[\s,]+/g, "|") + ")\\b"), null]);
                   d.push(["pln", /^\s+/, null, " \r\n\t\u00a0"]);
                   c = "^.[^\\s\\w.$@'\"`/\\\\]*";
                   a.regexLiterals && (c += "(?!s*/)");
@@ -318,8 +289,7 @@
               }
               function B(a, d, f) {
                   function c(a) {
-                      var b =
-                          a.nodeType;
+                      var b = a.nodeType;
                       if (1 == b && !r.test(a.className))
                           if ("br" === a.nodeName.toLowerCase()) g(a), a.parentNode && a.parentNode.removeChild(a);
                           else
@@ -355,8 +325,7 @@
                   var l = q.createElement("ol");
                   l.className = "linenums";
                   d = Math.max(0, d - 1 | 0) || 0;
-                  for (var t =
-                          0, u = b.length; t < u; ++t) k = b[t], k.className = "L" + (t + d) % 10, k.firstChild || k.appendChild(q.createTextNode("\u00a0")), l.appendChild(k);
+                  for (var t = 0, u = b.length; t < u; ++t) k = b[t], k.className = "L" + (t + d) % 10, k.firstChild || k.appendChild(q.createTextNode("\u00a0")), l.appendChild(k);
                   a.appendChild(l)
               }
               function n(a, d) {
@@ -435,10 +404,7 @@
               }
               var Q = "undefined" !== typeof window ? window : {},
                   J = ["break,continue,do,else,for,if,return,while"],
-                  K = [
-                      [J, "auto,case,char,const,default,double,enum,extern,float,goto,inline,int,long,register,restrict,short,signed,sizeof,static,struct,switch,typedef,union,unsigned,void,volatile"],
-                      "catch,class,delete,false,import,new,operator,private,protected,public,this,throw,true,try,typeof"
-                  ],
+                  K = [[J, "auto,case,char,const,default,double,enum,extern,float,goto,inline,int,long,register,restrict,short,signed,sizeof,static,struct,switch,typedef,union,unsigned,void,volatile"], "catch,class,delete,false,import,new,operator,private,protected,public,this,throw,true,try,typeof"],
                   R = [K, "alignas,alignof,align_union,asm,axiom,bool,concept,concept_map,const_cast,constexpr,decltype,delegate,dynamic_cast,explicit,export,friend,generic,late_check,mutable,namespace,noexcept,noreturn,nullptr,property,reinterpret_cast,static_assert,static_cast,template,typeid,typename,using,virtual,where"],
                   L = [K, "abstract,assert,boolean,byte,extends,finally,final,implements,import,instanceof,interface,null,native,package,strictfp,super,synchronized,throws,transient"],
                   M = [K, "abstract,add,alias,as,ascending,async,await,base,bool,by,byte,checked,decimal,delegate,descending,dynamic,event,finally,fixed,foreach,from,get,global,group,implicit,in,interface,internal,into,is,join,let,lock,null,object,out,override,orderby,params,partial,readonly,ref,remove,sbyte,sealed,select,set,stackalloc,string,select,uint,ulong,unchecked,unsafe,ushort,value,var,virtual,where,yield"],
@@ -457,38 +423,9 @@
                   }),
                   V = {};
               n(T, ["default-code"]);
-              n(E([], [
-                  ["pln", /^[^<?]+/],
-                  ["dec", /^<!\w[^>]*(?:>|$)/],
-                  ["com", /^<\!--[\s\S]*?(?:-\->|$)/],
-                  ["lang-", /^<\?([\s\S]+?)(?:\?>|$)/],
-                  ["lang-", /^<%([\s\S]+?)(?:%>|$)/],
-                  ["pun", /^(?:<[%?]|[%?]>)/],
-                  ["lang-",
-                      /^<xmp\b[^>]*>([\s\S]+?)<\/xmp\b[^>]*>/i
-                  ],
-                  ["lang-js", /^<script\b[^>]*>([\s\S]*?)(<\/script\b[^>]*>)/i],
-                  ["lang-css", /^<style\b[^>]*>([\s\S]*?)(<\/style\b[^>]*>)/i],
-                  ["lang-in.tag", /^(<\/?[a-z][^<>]*>)/i]
-              ]), "default-markup htm html mxml xhtml xml xsl".split(" "));
-              n(E([
-                  ["pln", /^[\s]+/, null, " \t\r\n"],
-                  ["atv", /^(?:\"[^\"]*\"?|\'[^\']*\'?)/, null, "\"'"]
-              ], [
-                  ["tag", /^^<\/?[a-z](?:[\w.:-]*\w)?|\/?>$/i],
-                  ["atn", /^(?!style[\s=]|on)[a-z](?:[\w:-]*\w)?/i],
-                  ["lang-uq.val", /^=\s*([^>\'\"\s]*(?:[^>\'\"\s\/]|\/(?=\s)))/],
-                  ["pun", /^[=<>\/]+/],
-                  ["lang-js", /^on\w+\s*=\s*\"([^\"]+)\"/i],
-                  ["lang-js", /^on\w+\s*=\s*\'([^\']+)\'/i],
-                  ["lang-js", /^on\w+\s*=\s*([^\"\'>\s]+)/i],
-                  ["lang-css", /^style\s*=\s*\"([^\"]+)\"/i],
-                  ["lang-css", /^style\s*=\s*\'([^\']+)\'/i],
-                  ["lang-css", /^style\s*=\s*([^\"\'>\s]+)/i]
-              ]), ["in.tag"]);
-              n(E([], [
-                  ["atv", /^[\s\S]+/]
-              ]), ["uq.val"]);
+              n(E([], [["pln", /^[^<?]+/], ["dec", /^<!\w[^>]*(?:>|$)/], ["com", /^<\!--[\s\S]*?(?:-\->|$)/], ["lang-", /^<\?([\s\S]+?)(?:\?>|$)/], ["lang-", /^<%([\s\S]+?)(?:%>|$)/], ["pun", /^(?:<[%?]|[%?]>)/], ["lang-", /^<xmp\b[^>]*>([\s\S]+?)<\/xmp\b[^>]*>/i], ["lang-js", /^<script\b[^>]*>([\s\S]*?)(<\/script\b[^>]*>)/i], ["lang-css", /^<style\b[^>]*>([\s\S]*?)(<\/style\b[^>]*>)/i], ["lang-in.tag", /^(<\/?[a-z][^<>]*>)/i]]), "default-markup htm html mxml xhtml xml xsl".split(" "));
+              n(E([["pln", /^[\s]+/, null, " \t\r\n"], ["atv", /^(?:\"[^\"]*\"?|\'[^\']*\'?)/, null, "\"'"]], [["tag", /^^<\/?[a-z](?:[\w.:-]*\w)?|\/?>$/i], ["atn", /^(?!style[\s=]|on)[a-z](?:[\w:-]*\w)?/i], ["lang-uq.val", /^=\s*([^>\'\"\s]*(?:[^>\'\"\s\/]|\/(?=\s)))/], ["pun", /^[=<>\/]+/], ["lang-js", /^on\w+\s*=\s*\"([^\"]+)\"/i], ["lang-js", /^on\w+\s*=\s*\'([^\']+)\'/i], ["lang-js", /^on\w+\s*=\s*([^\"\'>\s]+)/i], ["lang-css", /^style\s*=\s*\"([^\"]+)\"/i], ["lang-css", /^style\s*=\s*\'([^\']+)\'/i], ["lang-css", /^style\s*=\s*([^\"\'>\s]+)/i]]), ["in.tag"]);
+              n(E([], [["atv", /^[\s\S]+/]]), ["uq.val"]);
               n(v({
                   keywords: R,
                   hashComments: !0,
@@ -521,12 +458,11 @@
                   tripleQuotedStrings: !0
               }), ["cv", "py", "python"]);
               n(v({
-                      keywords: "caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END",
-                      hashComments: !0,
-                      multiLineStrings: !0,
-                      regexLiterals: 2
-                  }),
-                  ["perl", "pl", "pm"]);
+                  keywords: "caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END",
+                  hashComments: !0,
+                  multiLineStrings: !0,
+                  regexLiterals: 2
+              }), ["perl", "pl", "pm"]);
               n(v({
                   keywords: O,
                   hashComments: !0,
@@ -546,10 +482,7 @@
                   tripleQuotedStrings: !0,
                   regexLiterals: !0
               }), ["coffee"]);
-              n(E([], [
-                      ["str", /^[\s\S]+/]
-                  ]),
-                  ["regex"]);
+              n(E([], [["str", /^[\s\S]+/]]), ["regex"]);
               var U = Q.PR = {
                       createSimpleLexer: E,
                       registerLangHandler: n,
@@ -605,8 +538,7 @@
                                   if ((k !== h || u.test(n)) && !e.test(n)) {
                                       q = !1;
                                       for (l = d.parentNode; l; l = l.parentNode)
-                                          if (w.test(l.tagName) && l.className &&
-                                              u.test(l.className)) {
+                                          if (w.test(l.tagName) && l.className && u.test(l.className)) {
                                               q = !0;
                                               break
                                           } if (!q) {
@@ -621,7 +553,8 @@
                                           if (x.test(d.tagName)) l = 1;
                                           else var l = d.currentStyle,
                                               y = g.defaultView,
-                                              l = (l = l ? l.whiteSpace : y && y.getComputedStyle ? y.getComputedStyle(d, null).getPropertyValue("white-space") : 0) && "pre" === l.substring(0, 3);
+                                              l = (l = l ? l.whiteSpace : y && y.getComputedStyle ? y.getComputedStyle(d, null)
+                                                  .getPropertyValue("white-space") : 0) && "pre" === l.substring(0, 3);
                                           y = k.linenums;
                                           (y = "true" === y || +y) || (y = (y = n.match(/\blinenums\b(?::(\d+))?/)) ? y[1] && y[1].length ? +y[1] : !0 : !1);
                                           y && B(d, y, l);
