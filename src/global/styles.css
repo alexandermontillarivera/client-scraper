@@ -16,15 +16,12 @@ a{
   text-decoration: none;
 }
 
-.prettyprint.pln{
-  color: red
-}
 
 main{
   margin: 20px
 }
 
-h1, h2:not(.main-title){
+h1, h4, h2:not(.main-title){
   text-align: center;
   font-size: 4vw
 }
@@ -51,8 +48,14 @@ br{
 }
 
 
-@media (max-width: 450px) {
-  h1, h2:not(.main-title){
+@media (max-width: 850px) {
+  h1, h4, h2:not(.main-title){
     font-size: 8vw;
+  }
+}
+
+@media (max-width: 830px) {
+  .content{
+    margin: 3rem 0.4rem ;
   }
 }

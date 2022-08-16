@@ -1,13 +1,12 @@
 <script lang="ts">
   import Menu from '../components/nav/Menu.svelte'
-  import 'code-prettify/src/run_prettify.js'
   import { getLang } from '../util/lang.js'
+  import 'code-prettify/src/run_prettify'
+  import Github from '../components/widget/Github.svelte'
   const lang: any = getLang('documentation')
 </script>
-
-
 <div>
-  <Menu />
+  <Menu active={{documentation: true}} />
   <main>
     <div class="content">
       {#await lang}
@@ -23,7 +22,7 @@
         <code class="prettyprint lang-javascript">
           {@html `
             //*</br>
-            &nbsp;# EndpointApi: https://scraperty.deno.dev/api/meta </br>
+            &nbsp;# EndpointApi: https://scraperty.deno.dev/api/meta</br>
             &nbsp;# Method: POST </br>
             &nbsp;# BodyData?: {siteUrl: "url"}
             </br>*//</br></br>
@@ -76,6 +75,11 @@
           `}
         </code>
       </div>
+      <h4>Source code <i class="fa-solid fa-code"></i></h4>
+      <section>
+        <Github title="Frontend" description="Svelte, TypeScript, Vite, Vanilla CSS, Fontawesome, Vercel deploy." url="https://github.com/alexandermontillarivera/ftscraper" />
+        <Github title="Backend" description="TypeScript, Cheerio, Deno, Opine (Express in deno), CaualDB, Deno deploy." url="https://github.com/alexandermontillarivera/bkscraper"/>
+      </section>
     {/await}
     </div>
   </main>
@@ -93,6 +97,10 @@
     margin: 40px 0px;
 		font-size: 20px;
   }
+  h4{
+    text-align: center;
+    margin-bottom: 40px;
+  }
   code{
 		font-size: 20px;
   }
@@ -101,6 +109,18 @@
     padding: 40px;
     border-radius: 20px;
     margin-bottom: 40px;
+  }
+  section {
+    display: grid;
+    gap: 5%;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 600px));
+    justify-content: center;
+    padding-bottom: 40px;
+	}
+  @media (max-width: 1420px) {
+    section{
+      grid-template-columns: repeat(auto-fit, minmax(100%, 600px));
+    }
   }
   @media (prefers-color-scheme: light) {
     .code{

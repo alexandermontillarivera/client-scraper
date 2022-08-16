@@ -2,7 +2,7 @@
 	import Input from "./elements/Input.svelte"
 	import Submit from "./elements/Submit.svelte"
 	import { convertFormObject, ajaxSend } from "../../util/form.js"
-  import Table from '../widget/Table.svelte'
+  import Table from '../elements/Table.svelte'
 	import config from "../../config/config.js"
   import { dataDefaultMetaInfo } from '../../util/opengraph.js'
 	import type { dataResponse, data } from "../../types/scrapper.js"

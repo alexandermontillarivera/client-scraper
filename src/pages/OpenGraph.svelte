@@ -6,7 +6,7 @@
 </script>
 
 <div>
-	<Menu />
+	<Menu active={{opengraph: true}} />
 	<main>
 		<div class="content">
 			{#await lang}

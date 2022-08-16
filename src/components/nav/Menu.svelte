@@ -41,6 +41,7 @@
   })
   const title: string = 'Scraper'
   const { home,graph, meta, doc } = menuSelect[0].places
+  export let active: any = {home: false, documentation: false, opengraph: false, meta: false}
 </script>
 
 <header>
@@ -49,10 +50,10 @@
       <h2 class="main-title"><a href="/" use:link>{ title } <i class="fa-solid fa-glasses"></i></a></h2>
     </div>
     <ul>
-      <li><a href="/" use:link>{ home }</a></li>
-      <li><a href="/opengraph" use:link>{ graph }</a></li>
-      <li><a href="/meta" use:link>{ meta }</a></li>
-      <li><a href="/documentation" use:link>{ doc }</a></li>
+      <li class:active={active.home === true}><a href="/" use:link>{ home }</a></li>
+      <li class:active={active.opengraph === true}><a href="/opengraph" use:link>{ graph }</a></li>
+      <li class:active={active.meta === true}><a href="/meta" use:link>{ meta }</a></li>
+      <li class:active={active.documentation === true}><a href="/documentation" use:link>{ doc }</a></li>
       <li><ChangeLanguage id="desktop-lang"/></li>
     </ul>
   </nav>
@@ -66,10 +67,10 @@
         <div>
           <h2><a href="/" use:link>{ title } <i class="fa-solid fa-glasses"></i></a></h2>
         </div>
-        <li><a href="/" use:link><i class="fa-solid fa-house"></i><span>{ home }</span></a></li>
-        <li><a href="/opengraph" use:link><i class="fa-solid fa-share-nodes"></i><span>{ graph }</span></a></li>
-        <li><a href="/meta" use:link><i class="fa-solid fa-file-lines"></i><span>{ meta }</span></a></li>
-        <li><a href="/documentation" use:link><i class="fa-solid fa-book"></i><span>{ doc }</span></a></li>
+        <li><a href="/" use:link><i class="fa-solid fa-house"></i><span class:active={active.home === true}>{ home }</span></a></li>
+        <li><a href="/opengraph" use:link><i class="fa-solid fa-share-nodes"></i><span class:active={active.opengraph === true}>{ graph }</span></a></li>
+        <li><a href="/meta" use:link><i class="fa-solid fa-file-lines"></i><span class:active={active.meta === true}>{ meta }</span></a></li>
+        <li><a href="/documentation" use:link><i class="fa-solid fa-book"></i><span class:active={active.documentation === true}>{ doc }</span></a></li>
         <li class="c-lang-mb"><span class="mb-lang"><i class="fa-solid fa-language"></i><ChangeLanguage id="mobile-lang" /></span></li>
       </ul>
     </div>
@@ -82,6 +83,10 @@
     position: sticky;
     width: 100%;
     top: 0px;
+  }
+  .active{
+    font-weight: bold;
+    text-decoration: underline;
   }
   .desktop li:hover{
     opacity: 0.5;

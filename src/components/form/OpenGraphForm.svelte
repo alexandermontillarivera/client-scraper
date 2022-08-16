@@ -4,7 +4,7 @@
 	import Submit from "./elements/Submit.svelte"
   import { dataDefaultOpenGraph } from '../../util/opengraph.js'
 	import { convertFormObject, ajaxSend } from "../../util/form.js"
-  import Table from '../widget/Table.svelte'
+  import Table from '../elements/Table.svelte'
 	import config from "../../config/config.js"
 	import type { dataResponse, data } from "../../types/scrapper.js"
   

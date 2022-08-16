@@ -6,7 +6,7 @@
 </script>
 
 <div>
-	<Menu />
+	<Menu active={{meta: true}} />
 	<main>
 		<div class="content">
 			{#await lang}
