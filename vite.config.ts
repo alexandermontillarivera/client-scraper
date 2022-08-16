@@ -6,5 +6,10 @@ export default defineConfig({
   plugins: [svelte()],
   build: {
     outDir: 'build'
+  },
+  optimizeDeps: {
+    exclude: [
+      'code-prettify'
+    ]
   }
 })
